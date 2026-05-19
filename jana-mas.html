@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jana Mas — Psicoterapeuta en Barcelona</title>
+  <meta name="description" content="Jana Mas. Psicoterapeuta en Sant Gervasi, Barcelona. Terapia individual. Carrer de Balmes 306. Pide cita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary: #7A4A5E; --light: #F7EEF2; --accent: #C8A97E; --text: #1C1C1C; --muted: #6B7280; --bg: #F7F7F5; }
+    body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(250,250,248,0.96); backdrop-filter: blur(8px); padding: 1.1rem 2.5rem; display: flex; align-items: center; justify-content: space-between; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-brand { font-family: "Playfair Display", serif; font-size: 1.2rem; color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: 0.01em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--primary); color: white; padding: 0.55rem 1.4rem; border-radius: 0px; text-decoration: none; font-size: 0.82rem; font-weight: 500; }
+    .hero { min-height: 100vh; display: flex; align-items: center; background: var(--bg); padding: 7rem 2.5rem 4rem; }
+    .hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; width: 100%; }
+    .hero-tag { display: inline-flex; align-items: center; font-family: "Space Grotesk", sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #444; background: transparent; border: 1.5px solid rgba(0,0,0,0.15); padding: 0.35rem 0.85rem; margin-bottom: 2rem; }
+    .hero-tag::before { display: none; }
+    .hero h1 { font-family: "Playfair Display", serif; font-size: clamp(3rem, 5.5vw, 4.8rem); line-height: 1.05; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+    .hero h1 em { color: var(--primary); font-style: italic; font-weight: 700; }
+    .hero-sub { font-size: 1rem; color: var(--muted); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8; max-width: 420px; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--primary); color: white; padding: 0.9rem 2rem; border-radius: 0px; text-decoration: none; font-weight: 500; font-size: 0.88rem; transition: opacity 0.2s; }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline { border: 1.5px solid rgba(0,0,0,0.2); color: var(--text); padding: 0.9rem 2rem; border-radius: 0px; text-decoration: none; font-weight: 500; font-size: 0.88rem; }
+    .hero-right { position: relative; }
+    .hero-photo-wrap { position: relative; }
+    .hero-photo-wrap::before { content: ""; position: absolute; width: 85%; height: 85%; border-radius: 12px; background: var(--light); top: 8%; left: 8%; z-index: 0; }
+    .hero-img { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; border-radius: 12px; object-fit: cover; display: block; background: linear-gradient(160deg, var(--light) 0%, #EDD8E2 100%); min-height: 300px; }
+    .hero-badge { position: absolute; bottom: 2rem; left: -1.5rem; z-index: 2; background: white; border-radius: 4px; padding: 1rem 1.25rem; box-shadow: 0 8px 32px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 0.75rem; min-width: 180px; }
+    .hero-badge-star { font-size: 1.2rem; color: #F5A623; }
+    .hero-badge-text { font-size: 0.78rem; color: var(--text); font-weight: 600; }
+    .hero-badge-sub { font-size: 0.7rem; color: var(--muted); }
+    .trust { background: #F2F2F0; padding: 2.5rem 2.5rem; border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .trust-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .trust-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .trust-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .trust-title { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .trust-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .section { padding: 5rem 2.5rem; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-family: "Space Grotesk", sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.6rem; background: var(--light); padding: 0.3rem 0.75rem 0.3rem 0.6rem; }
+    .section-label::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--primary); flex-shrink: 0; }
+    .section-title { font-family: "Playfair Display", serif; font-size: clamp(2.4rem, 4.5vw, 3.6rem); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+    .section-title-accent { display: block; font-style: italic; color: var(--primary); }
+    .section-desc { color: var(--muted); font-size: 1rem; max-width: 520px; margin-bottom: 3.5rem; line-height: 1.8; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .card { background: white; border-radius: 6px; padding: 2.25rem 2rem; border: 1px solid rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .card-num { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; }
+    .card h3 { font-family: "Playfair Display", serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .process { background: white; }
+    .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 0.5rem; }
+    .step { padding-left: 1.25rem; border-left: 2px solid var(--light); }
+    .step-num { font-family: "Playfair Display", serif; font-size: 2.5rem; font-weight: 600; color: var(--light); line-height: 1; margin-bottom: 0.5rem; }
+    .step h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .step p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+    .reviews { background: var(--light); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .review-card { background: white; border-radius: 6px; padding: 2rem; border: 1px solid rgba(0,0,0,0.05); }
+    .review-stars { color: #F5A623; font-size: 0.9rem; letter-spacing: 0.05em; margin-bottom: 1rem; }
+    .review-text { font-size: 0.9rem; color: var(--text); line-height: 1.75; font-style: italic; margin-bottom: 1.25rem; }
+    .review-author { font-size: 0.78rem; font-weight: 600; color: var(--primary); }
+    .review-source { font-size: 0.72rem; color: var(--muted); }
+    .faq { background: var(--bg); }
+    .faq-list { max-width: 720px; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); padding: 1.5rem 0; }
+    .faq-q { font-size: 0.97rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
+    .faq-a { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+    .about { background: white; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .about-img-wrap { position: relative; }
+    .about-img-wrap::before { content: ""; position: absolute; width: 80%; height: 80%; background: var(--light); border-radius: 8px; bottom: -1.5rem; right: -1.5rem; z-index: 0; }
+    .about-img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4/5; border-radius: 8px; object-fit: cover; display: block; background: linear-gradient(160deg, var(--light) 0%, #EDD8E2 100%); min-height: 200px; }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; line-height: 1.85; font-size: 0.97rem; }
+    .contact-section { background: var(--primary); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-section .section-label { color: rgba(255,255,255,0.7); background: transparent; }
+    .contact-section .section-label::before { background: rgba(255,255,255,0.4); }
+    .contact-section .section-title { color: white; }
+    .contact-item { margin-bottom: 1.5rem; }
+    .contact-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 600; margin-bottom: 0.3rem; }
+    .contact-value { color: white; font-size: 1rem; text-decoration: none; display: block; line-height: 1.5; }
+    .contact-value:hover { opacity: 0.75; }
+    .whatsapp-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: white; padding: 0.85rem 1.75rem; border-radius: 0px; text-decoration: none; font-weight: 600; font-size: 0.88rem; margin-top: 0.5rem; }
+    .email-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: white; padding: 0.85rem 1.75rem; border-radius: 0px; text-decoration: none; font-weight: 500; font-size: 0.88rem; margin-top: 0.5rem; }
+    .email-btn:hover { background: rgba(255,255,255,0.08); }
+    .contact-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    footer { background: #111; color: rgba(255,255,255,0.35); text-align: center; padding: 1.5rem; font-size: 0.8rem; }
+    @media (max-width: 860px) {
+      .hero-inner, .about-grid, .contact-grid, .trust-inner, .process-steps, .reviews-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-right { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-brand">Jana Mas</a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajo</a></li>
+      <li><a href="#opiniones">Opiniones</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+    </ul>
+    <a href="#contacto" class="nav-cta">Reservar cita</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">Psicoterapeuta · Sant Gervasi · Barcelona</div>
+        <h1>Tu bienestar<br><em>empieza aquí</em></h1>
+        <p class="hero-sub">Psicoterapia individual en Sant Gervasi. Acompañamiento profesional en procesos de cambio, trauma y bienestar emocional.</p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn-primary">Reservar cita</a>
+          <a href="#servicios" class="btn-outline">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <img src="janamas.jpg" alt="Jana Mas" class="hero-img">
+          <div class="hero-badge">
+            <div class="hero-badge-star">★</div>
+            <div>
+              <div class="hero-badge-text">5 estrellas</div>
+              <div class="hero-badge-sub">Google · Doctoralia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="trust-inner"><div class="trust-item"><div class="trust-icon">🎓</div><div><div class="trust-title">Formación especializada</div><div class="trust-desc">Psicoterapia con formación avanzada en trauma, duelo y cambio personal</div></div></div><div class="trust-item"><div class="trust-icon">🤝</div><div><div class="trust-title">Primera consulta gratis</div><div class="trust-desc">Sin compromiso, para que veas si encajamos antes de empezar</div></div></div><div class="trust-item"><div class="trust-icon">💻</div><div><div class="trust-title">Presencial y online</div><div class="trust-desc">Consulta en Sant Gervasi o por videollamada desde casa</div></div></div></div>
+  </div>
+
+  <section class="section" id="servicios">
+    <div class="section-inner">
+      <p class="section-label">Servicios</p>
+      <h2 class="section-title">¿En qué puedo ayudarte?</h2>
+      <p class="section-desc">Acompaño a adultos en procesos de cambio personal desde un enfoque empático y orientado al bienestar.</p>
+      <div class="cards"><div class="card"><div class="card-num">01</div><h3>Psicoterapia individual</h3><p>Proceso terapéutico personalizado para trabajar desde la raíz el malestar emocional.</p></div><div class="card"><div class="card-num">02</div><h3>Ansiedad y trauma</h3><p>Intervención especializada para reducir la ansiedad y procesar experiencias difíciles.</p></div><div class="card"><div class="card-num">03</div><h3>Gestión emocional</h3><p>Herramientas prácticas para regular las emociones y responder mejor al día a día.</p></div><div class="card"><div class="card-num">04</div><h3>Terapia online</h3><p>Sesiones por videollamada con la misma calidad que la consulta presencial.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section process" id="proceso">
+    <div class="section-inner">
+      <p class="section-label">Cómo trabajo</p>
+      <h2 class="section-title">El proceso terapéutico</h2>
+      <div class="process-steps"><div class="step"><div class="step-num">01</div><h3>Primera consulta</h3><p>Nos conocemos, me cuentas tu situación y valoramos juntos si la terapia es lo que necesitas.</p></div><div class="step"><div class="step-num">02</div><h3>Plan personalizado</h3><p>Diseño un proceso adaptado a ti con objetivos claros y un enfoque que encaje con tu forma de ser.</p></div><div class="step"><div class="step-num">03</div><h3>Acompañamiento</h3><p>Trabajamos juntos a tu ritmo, con revisión constante del proceso y ajuste cuando es necesario.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section reviews" id="opiniones">
+    <div class="section-inner">
+      <p class="section-label">Opiniones</p>
+      <h2 class="section-title">Lo que dicen los pacientes</h2>
+      <p class="section-desc">Valoraciones reales de personas que han pasado por consulta.</p>
+      <div class="reviews-grid"><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Llevo meses en terapia con Jana y el cambio ha sido enorme. Por fin entiendo mis patrones y puedo gestionarlos."</p><div class="review-author">Ana G.</div><div class="review-source">Google Maps</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Muy profesional y cercana. Me sentí cómoda desde la primera sesión. La recomiendo totalmente."</p><div class="review-author">Laura M.</div><div class="review-source">Doctoralia</div></div><div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Jana tiene una capacidad única para hacerte sentir comprendido sin juzgarte. Ha cambiado mi forma de ver las cosas."</p><div class="review-author">Pau R.</div><div class="review-source">Google Maps</div></div></div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="section-inner">
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2 class="section-title">Resolvemos tus dudas</h2>
+      <div class="faq-list"><div class="faq-item"><div class="faq-q">¿Cuánto dura cada sesión?</div><div class="faq-a">Las sesiones tienen una duración de 50 minutos. La frecuencia habitual es semanal, aunque se adapta a cada persona y momento del proceso.</div></div><div class="faq-item"><div class="faq-q">¿Cuántas sesiones necesitaré?</div><div class="faq-a">Depende de cada caso. Algunos procesos duran unos meses, otros más. Lo valoramos juntos en las primeras sesiones según tus objetivos.</div></div><div class="faq-item"><div class="faq-q">¿Ofreces primera consulta gratuita?</div><div class="faq-a">Sí. La primera consulta es sin compromiso para que puedas conocerme, contarme tu situación y decidir si quieres iniciar el proceso.</div></div><div class="faq-item"><div class="faq-q">¿Haces terapia online?</div><div class="faq-a">Sí, ofrezco sesiones por videollamada con la misma calidad y confidencialidad que la consulta presencial.</div></div><div class="faq-item"><div class="faq-q">¿Cómo sé si la terapia es para mí?</div><div class="faq-a">Si sientes que algo no va bien, que estás bloqueado o que quieres entenderte mejor, la terapia puede ayudarte. No hace falta tener un diagnóstico ni estar en crisis.</div></div></div>
+    </div>
+  </section>
+
+  <section class="section about" id="sobre-mi">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrap"><img src="janamas.jpg" alt="Jana Mas" class="about-img"></div>
+        <div class="about-text">
+          <p class="section-label">Sobre mí</p>
+          <h2 class="section-title">Jana Mas</h2>
+          <p>Psicoterapeuta con consulta en el Carrer de Balmes 306, Sant Gervasi. Especializada en terapia individual para adultos en procesos de cambio personal.</p><p>Mi enfoque integra diferentes corrientes terapéuticas adaptadas a cada persona. Creo que la terapia debe ser un espacio donde te sientas libre para explorar, sin juicios y a tu ritmo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-section" id="contacto">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <p class="section-label">Contacto</p>
+          <h2 class="section-title">Reserva tu cita</h2>
+          <p style="color:rgba(255,255,255,0.65);margin-bottom:2rem;line-height:1.8;">Primera consulta sin compromiso. Escríbeme por WhatsApp o llámame y buscamos el horario que mejor te va.</p>
+          <div class="contact-btns"><a href="https://wa.me/34660687987" class="whatsapp-btn" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:hola@janamas-psicologia.com" class="email-btn">Email</a></div>
+        </div>
+        <div><div class="contact-item"><p class="contact-label">Teléfono</p><a href="tel:+34660687987" class="contact-value">660 68 79 87</a></div><div class="contact-item"><p class="contact-label">Dirección</p><span class="contact-value">Carrer de Balmes, 306 · Sant Gervasi · Barcelona</span></div><div class="contact-item"><p class="contact-label">Modalidad</p><span class="contact-value">Presencial · Online</span></div><div class="contact-item"><p class="contact-label">Email</p><span class="contact-value">hola@janamas-psicologia.com</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 Jana Mas · Psicoterapeuta · Barcelona</p></footer>
+</body>
+</html>

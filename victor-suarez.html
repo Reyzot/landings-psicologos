@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Víctor Suárez — Psicólogo en Barcelona</title>
+  <meta name="description" content="Psicólogo en Gràcia, Barcelona. Terapia individual y de pareja. Consulta en Plaça Gal·la Placídia. Pide cita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary: #3B5B8C; --accent: #E8C547; --text: #1a1a1a; --muted: #666; --bg: #F5F7FB; --white: #ffffff; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--primary); text-decoration: none; font-weight: 700; }
+    .nav-cta { background: var(--primary); color: white; padding: 0.5rem 1.2rem; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--primary) 0%, #253d63 100%); padding: 6rem 2rem 4rem; }
+    .hero-content { max-width: 650px; margin: 0 auto; text-align: center; color: white; }
+    .hero-tag { display: inline-block; background: rgba(232,197,71,0.2); border: 1px solid rgba(232,197,71,0.4); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.5rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.2; margin-bottom: 1rem; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 2.5rem; font-weight: 300; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: #1a1a1a; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.4); color: white; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+    .section { padding: 5rem 2rem; }
+    .section-inner { max-width: 900px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 3.5vw, 2.3rem); margin-bottom: 1rem; }
+    .section-desc { color: var(--muted); font-size: 1rem; max-width: 540px; margin-bottom: 3rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .card { background: white; border-radius: 8px; padding: 2rem 1.75rem; border: 1px solid rgba(0,0,0,0.07); }
+    .card-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; text-transform: uppercase; }
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .about { background: white; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-img { width: 100%; aspect-ratio: 4/5; background: linear-gradient(135deg, #e5eaf5 0%, #ccd4eb 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.75; font-size: 0.97rem; }
+    .contact-section { background: var(--primary); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .contact-section .section-label { color: var(--accent); }
+    .contact-section .section-title { color: white; }
+    .contact-item { margin-bottom: 1.5rem; }
+    .contact-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 0.25rem; }
+    .contact-value { color: white; font-size: 1rem; text-decoration: none; display: block; }
+    .contact-value:hover { color: var(--accent); }
+    .whatsapp-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: white; padding: 0.8rem 1.6rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+    footer { background: #111; color: rgba(255,255,255,0.4); text-align: center; padding: 1.5rem; font-size: 0.82rem; }
+    @media (max-width: 768px) { nav { padding: 1rem; } .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+    .hero { position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: rgba(255,255,255,0.05); top: -250px; right: -150px; pointer-events: none; }
+    .hero::after { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.03); bottom: -150px; left: -80px; pointer-events: none; }
+    .hero-wrap { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 220px; gap: 3rem; align-items: center; position: relative; z-index: 1; width: 100%; }
+    .hero-content { text-align: left; color: white; }
+    .hero-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 1.5rem 1.25rem; }
+    .hero-glass-stars { font-size: 1.1rem; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+    .hero-glass-title { color: white; font-size: 0.88rem; font-weight: 600; }
+    .hero-glass-sub { color: rgba(255,255,255,0.55); font-size: 0.75rem; margin-top: 0.2rem; }
+    .hero-glass-sep { width: 28px; height: 1px; background: rgba(255,255,255,0.2); margin: 0.9rem 0; }
+    .hero-glass-badge { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 100px; letter-spacing: 0.05em; }
+    .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 32px rgba(0,0,0,0.1); }
+    @media (max-width: 900px) { .hero-wrap { grid-template-columns: 1fr; } .hero-sidebar { display: none; } .hero-content { text-align: center; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-brand">Víctor Suárez</a>
+    <a href="#contacto" class="nav-cta">Pedir cita</a>
+  </nav>
+  <section class="hero">
+    <div class="hero-wrap">
+      <div class="hero-content">
+      <span class="hero-tag">Psicólogo · Gràcia · Barcelona</span>
+      <h1>Psicología con enfoque humano</h1>
+      <p class="hero-sub">Consulta de psicología individual en el corazón de Gràcia. Un espacio de confianza para trabajar lo que necesitas.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-primary">Pedir cita</a>
+        <a href="#servicios" class="btn-outline">Ver servicios</a>
+      </div>
+      <div class="hero-sidebar">
+        <div class="hero-glass">
+          <div class="hero-glass-stars">★★★★★</div>
+          <div class="hero-glass-title">Valoraciones excelentes</div>
+          <div class="hero-glass-sub">Google · Doctoralia</div>
+          <div class="hero-glass-sep"></div>
+          <div class="hero-glass-badge">Primera consulta gratis</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="servicios">
+    <div class="section-inner">
+      <p class="section-label">Servicios</p>
+      <h2 class="section-title">¿En qué puedo ayudarte?</h2>
+      <p class="section-desc">Ofrezco terapia psicológica para adultos desde un enfoque cercano, profesional y adaptado a cada persona.</p>
+      <div class="cards">
+        <div class="card"><div class="card-num">01</div><h3>Terapia individual</h3><p>Sesiones personalizadas para trabajar ansiedad, depresión, bloqueos emocionales y crecimiento personal.</p></div>
+        <div class="card"><div class="card-num">02</div><h3>Gestión emocional</h3><p>Aprende a entender y regular tus emociones para mejorar tu calidad de vida.</p></div>
+        <div class="card"><div class="card-num">03</div><h3>Crisis y cambios vitales</h3><p>Acompañamiento en momentos de ruptura, pérdida, cambio de trabajo o transiciones importantes.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section about" id="sobre-mi">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img">[ foto ]</div>
+        <div class="about-text">
+          <p class="section-label">Sobre mí</p>
+          <h2 class="section-title">Víctor Suárez</h2>
+          <p>Psicólogo colegiado con consulta en la Plaça de Gal·la Placídia, en el barrio de Gràcia. Mi enfoque es directo, honesto y comprometido con el cambio real.</p>
+          <p>Creo en la psicología como herramienta de transformación, no solo de alivio puntual.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section contact-section" id="contacto">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div>
+          <p class="section-label">Contacto</p>
+          <h2 class="section-title">Reserva tu cita</h2>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:2rem;">Primera consulta sin compromiso. Llámame o escríbeme por WhatsApp.</p>
+          <a href="https://wa.me/34658031720" class="whatsapp-btn" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div>
+          <div class="contact-item"><p class="contact-label">Teléfono</p><a href="tel:+34658031720" class="contact-value">658 03 17 20</a></div>
+          <div class="contact-item"><p class="contact-label">Dirección</p><span class="contact-value">Plaça de Gal·la Placídia, 10-12 · Gràcia · Barcelona</span></div>
+          <div class="contact-item"><p class="contact-label">Horario</p><span class="contact-value">Lunes–Viernes · 9:00–21:00</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer><p>© 2026 Víctor Suárez · Psicólogo · Barcelona</p></footer>
+</body>
+</html>
